@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>회원가입</title>
+
+</head>
+<body>
+    <h1>회원가입</h1>
+
+    <fieldset>
+        <legend>필수 입력 사항</legend>
+        <ul>
+
+       <li>
+        <label>
+            이름 : 
+            <input type="text">
+        </label>
+        </li>
+        <br>
+        <li>
+        <label>
+            아이디 : 
+            <input type="text"placeholder="6자 이상 20자 미만 공백 없이">
+        </label>
+        </li>
+        <br>
+        <li>
+        <label for="pw">비밀번호 : </label>
+        <input type="password" placeholder="대소문자로 입력해주세요" id="pw">
+        </li>
+        <br>
+        <li>
+        <label>
+            이메일 : 
+            <input type="text">
+        </label>
+        </li>
+        <br>
+        <li>
+        <label>
+            휴대폰 : 
+            <input type="text">
+        </label>
+        </li>
+        <br>
+        <input type="button" value="가입하기">
+        <input type="button" value="취소">
+
+    </ul>
+    </fieldset>
+
+    <fieldset>
+        <legend>선택 사항</legend>
+        <ul>
+            <li>
+            <select>
+                <option value="first"selected>지역을 선택해주세요</option>
+                <option value="seoul" >서울</option>
+                <option value="Incheon">인천</option>
+                <option value="Busan">부산</option>
+                <option value="Jeju">제주도</option>
+            </select>
+            </li>  
+            <li>       
+            <p> 취미를 골라주세요</p>
+                <input type="checkbox" id="coding" name="hobby">
+                <label for="coding">코딩</label>
+                <input type="checkbox" id="exercise" name="hobby">
+                <label for="exercise">운동</label>
+                <input type="checkbox" id="breathe" name="hobby">
+                <label for="breathe">숨쉬기</label>
+                <input type="checkbox" id="sleeping" name="hobby">
+                <label for="sleeping">잠자기</label>
+                <input type="checkbox" id="reading" name="hobby">
+                <label for="reading">독서</label>
+            </li>
+            
+            <li>
+                <p>성별을 골라주세요</p>
+                <input type="radio" name="gender" value="man" checked>
+                <label for="man">남자</label>
+                <input type="radio" name="gender" value="woman" checked>
+                <label for="woman">여자</label>
+                <input type="radio" name="gender" value="other" checked>
+                <label for="other">비밀</label>
+            </li>
+        </ul>
+    </fieldset>
+    
+</body>
+</html>
