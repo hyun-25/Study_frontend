@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자 더 알아보기</title>
+    <style>
+        img[alt]{
+            border: 5px dashed red;
+        }
+        /*        
+        [alt]{
+            border: 5px dashed red;
+        }
+        */
+
+        /*
+        기호와 함께 사용하는 속성 선택자
+        * : 값의 포함 여부
+        ^ : 값의 시작 여부
+        $ : 값의 끝 여부
+        */
+        [width ^= "1"]{
+            border: 5px dashed red;
+        }
+        body em{
+            color: blue;
+        }
+
+        /* p > em{
+            color: blue;
+        } */
+
+        #sam + p{
+            color: orange;
+        }
+        #sam ~ p{
+            color: orange;
+        }
+        
+        /* 형제 선택자는 뒤이어 등장하는 형제들을 대상으로 한다! */
+        #sam ~img {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <img src="../images/coco.JPG" width="120" alt="코코">
+    <img src="../images/coco.JPG" width="120">
+    <img src="../images/coco.JPG" width="120" id="sam"
+>    <p>코코는 고양이고 귀엽습니다. 코코는 고양이고 귀엽습니다. </p>
+    <p>코코는 고양이고 귀엽습니다. 코코는 고양이고 귀엽습니다. </p>
+    <p>코코는 고양이고 귀엽습니다. 코코는 고양이고 귀엽습니다. </p>
+    <p>코코는 고양이고 귀엽습니다. <em>코코는 고양이고 귀엽습니다. </em></p>
+</body>
+</html>

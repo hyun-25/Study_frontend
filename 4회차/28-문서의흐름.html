@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서의 흐름</title>
+    <style>
+        .container{
+            height: 400px;
+            border:  1px solid black;
+        }
+        #first{
+            float: right;
+        }
+        #second{
+            float: right;
+        }
+        /*float의 인기는 예전만 못하다*/
+        p{
+            clear: right;
+            /*right,left,both*/
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="first"
+        src="../images/coco.JPG" width="160">
+        <img id="second"
+        src="../images/coco.JPG" width="160">
+        <p>코코는 고양이다.</p>
+    </div>
+</body>
+</html>
+
