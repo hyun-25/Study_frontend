@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+
+    <title>채팅방 만들기</title>
+    <link href="T11_chat.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <main class="chat-screen">
+            <!--클래스 이름 사용 이유 : 태그 이름만으로는 정확한 역할 파악이 어려움,
+            태그보다는 클래스 선택자가 우선성, 명시성이 좋기 때문.--> 
+            <section class="chat-screen_bar"></section>
+             <div class="user">
+                <div class="user_column">
+                    <div class="user_pic"></div>
+                </div>
+                
+                <div class="user_column">
+                    <p class="user_nick">코코</p>
+                    <p class="user_count">2</p>
+                </div>
+             </div>
+            </section>
+        </main>
+        <form class="chat-form">
+            <section class="chat-form_field">
+                <textarea class="chat-form_msg"></textarea>
+                <input type="submit" value="전송" class="chat-form_bt"> 
+            </section>
+        </form>
+    </div>
+</body>
+</html>

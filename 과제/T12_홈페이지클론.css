@@ -1,0 +1,83 @@
+@font-face {
+    font-family: "San Francisco";
+    font-weight: 400;
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+} 
+
+body{margin: 0px;}
+
+html{
+    background-color: black;
+    
+}
+.menu{
+    padding: 5px;
+    border-bottom: 1px solid black;
+    background-color: rgb(70, 70, 70);
+    margin: 0px;
+    padding: 0px;
+}
+.menu > li{
+    display: inline-block;
+    text-align: center;
+}
+li > a{
+    display: inline-block;
+    width: 84px;
+    height: 40px;;
+    padding: 10px 5px 0px 5px;
+    margin-top: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.main_head > p{
+    margin: 0px;
+    padding: 20px 0px 20px 0px;
+    text-align: center;
+    background-color: white;
+
+}
+
+.main_head > p > a {color: blue;}
+.main_content > p{
+    color: white;
+    text-align: center;
+}
+
+#first{
+    margin-left: 100px;
+}
+
+img{
+    position: absolute;
+
+    top:500px;
+    width: 100%;
+    
+}
+
+#title{
+    font-size: 70px;
+    font-weight: 600;
+    margin-top: 70px;
+    margin-bottom: 10px;
+    
+}
+
+#sub{
+    font-size: 30px;
+    margin-top: 10px;
+}
+.main_content > li{
+    text-align: center;
+}
+.main_content > li > a{
+    text-decoration: none;
+    text-align: center;
+    color: rgb(32, 98, 229);
+    width: 130px;
+    font-size: 20px;
+
+    
+}
