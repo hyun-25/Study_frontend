@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>햄버거바 만들기</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .menu, #minimenu {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: black;
+            display: none; /* Hide the menu by default */
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px; /* adjust the height as needed */
+        }
+
+        .menu > li, #minimenu > li {
+            display: block; /* Change to block to stack items vertically */
+            margin-bottom: 10px; /* Add some spacing between menu items */
+            color: white; /* Set text color to white */
+        }
+
+        #home {
+            background: green;
+            margin: 0;
+        }
+
+        li > a {
+            text-decoration: none;
+            color: white;
+        }
+
+        li {
+            text-align: center;
+            margin: 0;
+            width: 60px;
+            line-height: 30px;
+            font-size: 18px;
+            padding: 10px 20px 10px 20px;
+            justify-content: space-between;
+        }
+
+        .bar {
+            text-decoration: none;
+            text-align: center;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        @media screen and (min-width: 550px) {
+            .menu {
+                display: flex !important;
+            }
+
+            .bar {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 550px) {
+            .nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            #minimenu {
+                width: 100%;
+                background-color: black;
+                display: none; /* Hide the minimenu by default */
+            }
+
+            #minimenu > li {
+                font-size: 25px;
+                width: 100%;
+                height: 10vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: auto;
+                margin-right: auto;
+                color: white; /* Set text color to white */
+            }
+
+            .bar {
+                display: block; /* Show the hamburger icon */
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+
+            .menu.active, #minimenu.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: black;
+            }
+            #home {
+            background: green;
+            margin: 0;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul class="menu">
+            <li id="home"><a href="#">홈</a></li>
+            <li><a href="#">소개</a></li>
+            <li><a href="#">서비스</a></li>
+            <li><a href="#">정책</a></li>
+        </ul>
+        <ul id="minimenu" class="minimenu">
+            <li id="home" style="display: none;"><a href="#">홈</a></li>
+            <li style="display: none;"><a href="#">소개</a></li>
+            <li style="display: none;"><a href="#">서비스</a></li>
+            <li style="display: none;"><a href="#">정책</a></li>
+        </ul>
+        <div class="bar" onclick="toggleMenu()">
+            <p><a href="#">🍔</a></p>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            var minimenu = document.querySelector('#minimenu');
+            menu.classList.toggle('active');
+            minimenu.classList.toggle('active');
+
+            // 햄버거 버튼 클릭시 미니메뉴 아이템들 보이도록 처리
+            var minimenuItems = minimenu.querySelectorAll('li');
+            minimenuItems.forEach(function (item) {
+                item.style.display = 'block';
+            });
+        }
+
+        document.addEventListener('click', function (e) {
+            var menu = document.querySelector('.menu');
+            var bar = document.querySelector('.bar');
+            var minimenu = document.querySelector('#minimenu');
+
+            if (!menu.contains(e.target) && !bar.contains(e.target) && !minimenu.contains(e.target)) {
+                menu.classList.remove('active');
+                minimenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
