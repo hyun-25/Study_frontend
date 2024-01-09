@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>햄버거바 만들기</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        nav {
+            
+            padding: 0px;
+            
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            height: 40px;
+            background-color: #333;
+        }
+
+        nav li {
+            display: inline-block;
+            margin-right: 20px;
+            background-color: #333;
+            text-decoration: none;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        nav li>a{
+            text-decoration: none;
+            color: white;
+        }
+
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+
+        }
+
+        #home{
+            background-color: greenyellow;
+        }
+
+        @media screen and (max-width: 550px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                
+            }
+
+            nav ul.active {
+                display: flex;
+
+            }
+            nav{
+                text-align: center;
+            }
+            nav li {
+                display: block;
+                margin: 0px 0;
+                width: 100%;
+                text-align: center;
+                
+            }
+
+            .menu-icon {
+                display: inline-block;
+                font-size: 20px;
+                cursor: pointer;
+
+                
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="menu-icon">&#9776;</div>
+        <ul>
+            <li id="home"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Policy</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        document.querySelector('.menu-icon').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
