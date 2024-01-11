@@ -12,20 +12,23 @@
 </head>
 <body>
     <h1 id="name"></h1>
-    <p id="hobby">
+    <p id="hobby"></p>
     <p id="song"></p>
 
     <script>
+        
         const nameElement = document.querySelector("#name")
         let name = prompt("당신의 이름은?")
         nameElement.textContent = name
 
-        const nameElement = document.querySelector("#hobby")
+        const hobbyElement = document.querySelector("#hobby")
         let hobby = prompt("당신의 취미는?")
-        nameElement.textContent =  `취미는 ${hobby}입니다!`
+        hobbyElement.textContent =  `취미는 ${hobby}입니다!`
 
         document.querySelector("#song")
         .textContent = `좋아하는 곡은 ${prompt("좋아하는 곡은?")}입니다!`
+        
     </script>
+
 </body>
 </html>
