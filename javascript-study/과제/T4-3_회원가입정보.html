@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T5_회원가입</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet">
+    <style>
+        *{
+            text-align: center;
+
+            font-family: 'IBM Plex Sans KR', sans-serif;
+
+            background-color: rgb(232, 238, 218);
+
+        }
+
+        #box{
+            display: inline-block;
+            width: 300px;
+            height: 30px;
+            ;
+        }
+        #number{
+            width: 90px;
+            height: 30px;
+        }
+
+        #region{
+            width: 300px;
+            height: 30px;
+        }
+
+
+        #finish{
+            width: 300px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1> OZ 초격차 회원가입</h1>
+        <form>
+            <label for = "email"></label>
+            <input type="text" id="box" placeholder="이메일을 입력하세요" name="email">
+            <br>
+            <br>
+            <label for = "name"></label>
+            <input type="text" id="box" placeholder="이름을 입력하세요" name="name">
+            <br>
+            <br>
+            <label for="pw"></label>
+            <input type="password" placeholder="비밀번호를 입력하세요" id="box">
+            <br>
+            <br>
+            <label for="repw"></label>
+            <input type="password" placeholder="비밀번호를 다시 입력하세요" id="box">
+            <br>
+            <br>
+            <label></label>
+            <input type="phone" id="number"> 
+            <label>-</label>
+            <input type="phone" id="number"> 
+            <label>-</label>
+            <input type="phone" id="number"> 
+            <br>
+            <br>
+            <label>000000</label>
+            <input type="button" value="인증번호 전송" id="submit">
+            <br>
+            <br>
+            <label>3:00</label>
+            <input type="button" value="인증 완료" id="submit">
+             
+            <br>
+            <br>
+            
+            <select id="region">
+                <option value="first"selected>지역을 선택해주세요</option>
+                <option value="seoul" >서울</option>
+                <option value="Incheon">인천</option>
+                <option value="Busan">부산</option>
+                <option value="Jeju">제주도</option>
+            </select>
+            <br>
+            <br>
+            <input type="radio" id="gender">
+            <label for="gender">여성</label>
+            <input type="radio" id="gender">
+            <label for="gender">남성</label>
+            <br>
+            <br>
+            <input type="button" value="가입하기" id="finish">
+            
+        </form>
+    </main>
+    <script>
+        document.getElementById('finish').addEventListener('click', function () {
+            // 사용자 데이터를 콘솔에 출력한다
+            var email = document.getElementsByName('email')[0].value;
+            var name = document.getElementsByName('name')[0].value;
+            var password = document.getElementById('box').value; 
+            var phoneNumber = document.getElementById('number').value;
+            var region = document.getElementById('region').value;
+            var gender = document.querySelector('input[name="gender"]:checked') ? document.querySelector('input[name="gender"]:checked').value : '';
+
+            console.log('Email:', email);
+            console.log('Name:', name);
+            console.log('Password:', password);
+            console.log('Phone Number:', phoneNumber);
+            console.log('Region:', region);
+            console.log('Gender:', gender);
+        });
+    </script>
+</body>
+</html>
