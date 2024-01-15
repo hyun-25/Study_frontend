@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>별 트리 찍기</title>
+</head>
+<body>
+    
+    <h1>별트리 찍기</h1>
+    <p>1번 별<br>
+    
+    <script>
+        for(let i = 0; i < 6; i += 1){
+            let stars = "*".repeat(i);
+            document.write(`<p>${stars}</p>`);
+        }
+    </script>   
+    </p>
+    <p>2번 별<br>
+        <script>
+            for(let i = 1; i <= 5; i++) {
+                let stars = "*".repeat(i);
+                document.write(`${stars}<br>`);
+            }
+
+            for(let i = 4; i >= 1; i--) {
+                let stars = "*".repeat(i);
+                document.write(`${stars}<br>`);
+            }
+        </script>
+    </p>
+    <p>3번 별<br>
+        <script>
+            // 위의 삼각형 구현
+            for (let i = 1; i <= 5; i++) {
+                for (let j = 5 - i; j >= 1; j--) {
+                    document.write("&nbsp;");
+                }
+    
+                let result = 2 * i;
+                for (let h = 1; h < result; h++) {
+                    document.write("*");
+                }
+    
+                document.write("<br>");
+            }
+    
+            // 아래의 삼각형 구현
+            for (let i = 1; i <= 5; i++) {
+                for (let j = 1; j < i; j++) {
+                    document.write("&nbsp;");
+                }
+    
+                let result = 2 * i - 1;
+                for (let h = 9; h >= result; h--) {
+                    document.write("*");
+                }
+    
+                document.write("<br>");
+            }
+        </script>
+    </p>
+
+    
+</body>
+</html>
