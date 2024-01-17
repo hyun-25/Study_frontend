@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>현재 시간 및 올해의 남은 시간</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+
+        #remainingTime, #currentTime {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>현재 시간 및 올해의 남은 시간</h1>
+    <div id="currentTime"></div>
+    <div id="remainingTime"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 현재 시간 가져오기
+            function getCurrentTime() {
+                const now = new Date();
+                return now.toLocaleTimeString();
+            }
+
+            // 올해의 남은 시간 계산
+            function getRemainingTime() {
+                const now = new Date();
+                const endOfYear = new Date(now.getFullYear() + 1, 0, 1); // 다음 해의 1월 1일
+                const remainingMilliseconds = endOfYear - now;
+                const remainingSeconds = Math.floor(remainingMilliseconds / 1000);
+                const remainingMinutes = Math.floor(remainingSeconds / 60);
+                const remainingHours = Math.floor(remainingMinutes / 60);
+
+                return `${remainingHours}시간 ${remainingMinutes % 60}분 ${remainingSeconds % 60}초`;
+            }
+
+            // 현재 시간 업데이트
+            function updateCurrentTime() {
+                const currentTimeElement = document.getElementById('currentTime');
+                currentTimeElement.textContent = `현재 시간: ${getCurrentTime()}`;
+            }
+
+            // 남은 시간 업데이트
+            function updateRemainingTime() {
+                const remainingTimeElement = document.getElementById('remainingTime');
+                remainingTimeElement.textContent = `올해의 남은 시간: ${getRemainingTime()}`;
+            }
+
+            // 초기 업데이트
+            updateCurrentTime();
+            updateRemainingTime();
+
+            // 1초마다 업데이트
+            setInterval(function() {
+                updateCurrentTime();
+                updateRemainingTime();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

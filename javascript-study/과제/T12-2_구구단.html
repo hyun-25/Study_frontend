@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>구구단</h2>
+        <h3>2~9단을 만들어 보세요!</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th></th> <!-- 빈 헤더 셀 추가 -->
+                    <th>1단</th>
+                    <th>2단</th>
+                    <th>3단</th>
+                    <th>4단</th>
+                    <th>5단</th>
+                    <th>6단</th>
+                    <th>7단</th>
+                    <th>8단</th>
+                    <th>9단</th>
+                </tr>
+            </thead>
+            <tbody id="guguTableBody">
+                <!-- 이 부분은 자바스크립트로 동적으로 생성됩니다. -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var tableBody = document.getElementById('guguTableBody');
+
+            // 1부터 9까지의 각 단 생성
+            for (var i = 1; i <= 9; i++) {
+                var row = document.createElement('tr');
+
+                // 각 단의 결과 생성
+                for (var j = 1; j <= 9; j++) {
+                    var cell = document.createElement('td');
+                    
+                    // 첫 번째 열에는 단을 출력, 나머지 열에는 각 단의 결과 출력
+                    cell.textContent = (j === 1) ? i + '단' : i + ' x ' + j + ' = ' + (i * j);
+                    
+                    row.appendChild(cell);
+                }
+
+                tableBody.appendChild(row);
+            }
+        });
+    </script>
+</body>
+</html>
