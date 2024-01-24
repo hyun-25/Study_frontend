@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .game-container {
+            text-align: center;
+        }
+
+        .choices button {
+            font-size: 16px;
+            margin: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #result {
+            font-size: 16px;
+            margin-top: 20px;
+        }
+    </style>
+    <title>가위바위보 게임</title>
+</head>
+<body>
+    <div class="game-container">
+        <h1>가위바위보 게임</h1>
+        <p>가위, 바위, 보 중 하나를 입력하세요: </p>
+        <input type="text" id="userInput">
+        <button onclick="playGame()">결과 확인</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        function playGame() {
+            const userInput = document.getElementById('userInput').value.toLowerCase();
+            const choices = ['rock', 'paper', 'scissors'];
+            const computerChoice = choices[Math.floor(Math.random() * 3)];
+
+            const result = getResult(userInput, computerChoice);
+
+            displayResult(result, userInput, computerChoice);
+        }
+
+        function getResult(userChoice, computerChoice) {
+            if (userChoice === computerChoice) {
+                return '비겼습니다!';
+            }
+
+            if (
+                (userChoice === 'rock' && computerChoice === 'scissors') ||
+                (userChoice === 'paper' && computerChoice === 'rock') ||
+                (userChoice === 'scissors' && computerChoice === 'paper')
+            ) {
+                return '이겼습니다!';
+            }
+
+            return '졌습니다!';
+        }
+
+        function displayResult(result, userChoice, computerChoice) {
+            const resultElement = document.getElementById('result');
+            resultElement.innerHTML = `
+                당신의 선택 : ${userChoice}/ 컴퓨터의 선택 : ${getKoreanChoice(computerChoice)}
+                / 결과: ${result}
+            `;
+        }
+
+        function getKoreanChoice(choice) {
+            switch (choice) {
+                case 'rock':
+                    return '바위';
+                case 'paper':
+                    return '보';
+                case 'scissors':
+                    return '가위';
+                default:
+                    return choice;
+            }
+        }
+    </script>
+</body>
+</html>
