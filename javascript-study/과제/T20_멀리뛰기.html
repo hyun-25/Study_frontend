@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>떡잎유치원 멀리뛰기 결과</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      margin: 20px auto;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>떡잎유치원 멀리뛰기 결과</h1>
+
+  <table>
+    <tr>
+      <th>이름</th>
+      <th>점수</th>
+    </tr>
+    <tr>
+      <td>짱구</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <td>맹구</td>
+      <td>75</td>
+    </tr>
+    <tr>
+      <td>철수</td>
+      <td>95</td>
+    </tr>
+    <tr>
+      <td>훈이</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>유리</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <td>수지</td>
+      <td>86</td>
+    </tr>
+  </table>
+
+  <h2>75점 이상인 학생들</h2>
+
+  <ul id="high-scorers">
+    <!-- JavaScript로 동적으로 생성될 목록 -->
+  </ul>
+
+  <script>
+    // 75점 이상인 학생들의 점수를 추출
+    const scores = {
+      "짱구": 45,
+      "맹구": 75,
+      "철수": 95,
+      "훈이": 50,
+      "유리": 68,
+      "수지": 86
+    };
+
+    const highScorersList = document.getElementById("high-scorers");
+
+    for (const [name, score] of Object.entries(scores)) {
+      if (score >= 75) {
+        // 75점 이상인 학생들을 동적으로 목록에 추가
+        const listItem = document.createElement("li");
+        listItem.textContent = `${name}: ${score}점`;
+        highScorersList.appendChild(listItem);
+      }
+    }
+  </script>
+</body>
+</html>
