@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2016",    //자바스크립트 es버전 설정                            
+    "module": "CommonJS",                        
+    "esModuleInterop": true,    //쉽게 내보내기 할 수 있도록 생성                               
+    "forceConsistentCasingInFileNames": true, //파일 이름에서 대소문자 일관성 강조 여부
+    "strict": true,      //엄격성 활성 (true기본)                                
+    "skipLibCheck": true,  //타입검사 생략(컴파일시간단축)       
+    "outDir" : "dist", //컴파일된 자바스크립트 파일들을 저장할 디렉토리 설정
+    "noUncheckedIndexedAccess" : false, //index에서 엄격한 타입 검사 {true기본)   
+    //"lib" : ["ES2022"] // 배열이라 여러개 사용 가능
+  },
+  "include":["src/**/*"]//시작폴더명 지정
+}
